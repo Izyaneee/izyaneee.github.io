@@ -2,45 +2,38 @@
 <html>
 <head>
     <title>Coin Combinations</title>
-    <style>
-        /* Add CSS styles here */
-    </style>
 </head>
 <body>
-    <h1>Coin Combinations Calculator</h1>
-    
-    <label for="amount">Enter an amount in cents:</label>
-    <input type="number" id="amount" min="1" step="1">
-    <button onclick="calculateCoinCombinations()">Calculate</button>
-    <button onclick="resetCalculator()">Reset</button>
-
-    <p id="result"></p>
-
     <script>
-        function calculateCoinCombinations() {
-            var totalCents = parseInt(document.getElementById("amount").value, 10);
+        // Choose a value in cents (e.g., $1.28 = 128 cents)
+        var totalCents = 128;
 
-            if (isNaN(totalCents) || totalCents < 1) {
-                alert("Please enter a valid amount greater than or equal to 1 cent.");
-                return;
-            }
+        // Define variables for each type of coin
+        var penny = 1;
+        var nickel = 5;
+        var dime = 10;
+        var quarter = 25;
 
-            // Rest of your calculation code here
-            // ...
+        // Calculate combinations of coins to equal the total value
+        var quartersCount = Math.floor(totalCents / quarter);
+        var remainingCentsAfterQuarters = totalCents % quarter;
+        var dimesCount = Math.floor(remainingCentsAfterQuarters / dime);
+        var remainingCentsAfterDimes = remainingCentsAfterQuarters % dime;
+        var nickelsCount = Math.floor(remainingCentsAfterDimes / nickel);
+        var remainingCentsAfterNickels = remainingCentsAfterDimes % nickel;
+        var penniesCount = remainingCentsAfterNickels;
 
-            // Update the result element
-            var coinCombinationString = "To make $" + (totalCents / 100) + " you can use: ";
-            coinCombinationString += quartersCount + " quarters, ";
-            coinCombinationString += dimesCount + " dimes, ";
-            coinCombinationString += nickelsCount + " nickels, and ";
-            coinCombinationString += penniesCount + " pennies.";
-            document.getElementById("result").textContent = coinCombinationString;
-        }
+        // Create a string to announce the coin combinations
+        var coinCombinationString = "To make $" + (totalCents / 100) + " you can use: ";
+        coinCombinationString += quartersCount + " quarters, ";
+        coinCombinationString += dimesCount + " dimes, ";
+        coinCombinationString += nickelsCount + " nickels, and ";
+        coinCombinationString += penniesCount + " pennies.";
 
-        function resetCalculator() {
-            document.getElementById("amount").value = "";
-            document.getElementById("result").textContent = "";
-        }
+        // Display the coin combinations on the web page
+        var resultElement = document.createElement("p");
+        resultElement.textContent = coinCombinationString;
+        document.body.appendChild(resultElement);
     </script>
 </body>
 </html>
