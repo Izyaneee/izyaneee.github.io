@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Iranian Narges Mohammadi wins 2023 Nobel Peace Prize</title>
+    <title>Coin Combinations</title>
+    <style>
+        /* Add CSS styles here */
+    </style>
 </head>
 <body>
-    <h1>NYT: Mohammadi 'more hopeful' after Nobel win</h1>
-    <p>Iranian Nobel Peace Prize winner Narges Mohammadi said in a statement to the New York Times (NYT) on Friday that global support and recognition of her human rights advocacy makes her "more resolved, more responsible, more passionate and more hopeful."</p>
-    <p>"Standing alongside the brave mothers of Iran,” she added, "I will continue to fight against the relentless discrimination, tyranny and gender-based oppression by the oppressive religious government until the liberation of women."</p>
-    <p>"I also hope this recognition makes Iranians protesting for change stronger and more organized. Victory is near," Mohammadi said, according to an NYT post on X, the platform formerly known as Twitter.</p>
-  
-    <!-- Link back to the main hub -->
-    <a href="index.html">Back to News Hub</a>
+    <h1>Coin Combinations Calculator</h1>
+    
+    <label for="amount">Enter an amount in cents:</label>
+    <input type="number" id="amount" min="1" step="1">
+    <button onclick="calculateCoinCombinations()">Calculate</button>
+    <button onclick="resetCalculator()">Reset</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateCoinCombinations() {
+            var totalCents = parseInt(document.getElementById("amount").value, 10);
+
+            if (isNaN(totalCents) || totalCents < 1) {
+                alert("Please enter a valid amount greater than or equal to 1 cent.");
+                return;
+            }
+
+            // Rest of your calculation code here
+            // ...
+
+            // Update the result element
+            var coinCombinationString = "To make $" + (totalCents / 100) + " you can use: ";
+            coinCombinationString += quartersCount + " quarters, ";
+            coinCombinationString += dimesCount + " dimes, ";
+            coinCombinationString += nickelsCount + " nickels, and ";
+            coinCombinationString += penniesCount + " pennies.";
+            document.getElementById("result").textContent = coinCombinationString;
+        }
+
+        function resetCalculator() {
+            document.getElementById("amount").value = "";
+            document.getElementById("result").textContent = "";
+        }
+    </script>
 </body>
 </html>
+
 
