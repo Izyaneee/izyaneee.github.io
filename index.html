@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Izyan's News</title>
+    <title>Coin Combinations</title>
+    <style>
+        /* Add CSS styles here */
+    </style>
 </head>
 <body>
-    <h1>Welcome to Izyan's News</h1>
-    <p>This is the main news hub where you can find the latest articles and news updates.</p>
+    <h1>Coin Combinations Calculator</h1>
+    
+    <label for="amount">Enter an amount in cents:</label>
+    <input type="number" id="amount" min="1" step="1">
+    <button onclick="calculateCoinCombinations()">Calculate</button>
+    <button onclick="resetCalculator()">Reset</button>
 
-    <h2>Latest News Article</h2>
-    <p>Check out our latest news article:</p>
-    <a href="article.html">Read Article</a>
+    <p id="result"></p>
 
-    <h2>Download Article (PDF)</h2>
-    <p>You can download the article in PDF format:</p>
-    <a href="Iranian Narges Mohammadi wins 2023 Nobel Peace Prize – DW – 10_06_2023.pdf" target="_blank">Download PDF</a>
+    <script>
+        function calculateCoinCombinations() {
+            var totalCents = parseInt(document.getElementById("amount").value, 10);
 
-    <h2>External News Source</h2>
-    <p>Explore an external news source:</p>
-    <a href="https://www.dw.com/en/narges-mohammadi-wins-2023-nobel-peace-prize/live-67014246" target="_blank">External News Source</a>
+            if (isNaN(totalCents) || totalCents < 1) {
+                alert("Please enter a valid amount greater than or equal to 1 cent.");
+                return;
+            }
+
+            // Rest of your calculation code here
+            // ...
+
+            // Update the result element
+            var coinCombinationString = "To make $" + (totalCents / 100) + " you can use: ";
+            coinCombinationString += quartersCount + " quarters, ";
+            coinCombinationString += dimesCount + " dimes, ";
+            coinCombinationString += nickelsCount + " nickels, and ";
+            coinCombinationString += penniesCount + " pennies.";
+            document.getElementById("result").textContent = coinCombinationString;
+        }
+
+        function resetCalculator() {
+            document.getElementById("amount").value = "";
+            document.getElementById("result").textContent = "";
+        }
+    </script>
 </body>
 </html>
+
