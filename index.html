@@ -2,10 +2,9 @@
 <html>
 <head>
   <style>
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
-      gap: 10px; /* Adjust the gap between images as needed */
+    .image-container {
+      max-width: 600px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the container */
     }
 
     .image-item {
@@ -15,18 +14,13 @@
   </style>
 </head>
 <body>
-  <div class="image-grid">
-    <div class="image-item">
-      <img src="Panda.jpg" alt="Panda">
-    </div>
-    <div class="image-item">
-      <img src="Grizzly.jpg" alt="Grizzly">
-    </div>
-    <div class="image-item">
-      <img src="Polar.jpg" alt="Polar">
-    </div>
-    <!-- Add more image items as needed -->
+  <div class="image-container">
+    <img src="Panda.jpg" class="image-item" alt="Panda" width="300" height="200">
+    <img src="Grizzly.jpg" class="image-item" alt="Grizzly" width="300" height="200">
+    <img src="Polar.jpg" class "image-item" alt="Polar" width="300" height="200">
+    <!-- Add more images and adjust the width and height as needed -->
   </div>
 </body>
 </html>
+
 
