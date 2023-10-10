@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Coin Combinations</title>
+    <title>Big Bear Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .image {
+            max-width: 300px;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        // Choose a value in cents (e.g., $1.28 = 128 cents)
-        var totalCents = 128;
-
-        // Define variables for each type of coin
-        var penny = 1;
-        var nickel = 5;
-        var dime = 10;
-        var quarter = 25;
-
-        // Calculate combinations of coins to equal the total value
-        var quartersCount = Math.floor(totalCents / quarter);
-        var remainingCentsAfterQuarters = totalCents % quarter;
-        var dimesCount = Math.floor(remainingCentsAfterQuarters / dime);
-        var remainingCentsAfterDimes = remainingCentsAfterQuarters % dime;
-        var nickelsCount = Math.floor(remainingCentsAfterDimes / nickel);
-        var remainingCentsAfterNickels = remainingCentsAfterDimes % nickel;
-        var penniesCount = remainingCentsAfterNickels;
-
-        // Create a string to announce the coin combinations
-        var coinCombinationString = "To make $" + (totalCents / 100) + " you can use: ";
-        coinCombinationString += quartersCount + " quarters, ";
-        coinCombinationString += dimesCount + " dimes, ";
-        coinCombinationString += nickelsCount + " nickels, and ";
-        coinCombinationString += penniesCount + " pennies.";
-
-        // Display the coin combinations on the web page
-        var resultElement = document.createElement("p");
-        resultElement.textContent = coinCombinationString;
-        document.body.appendChild(resultElement);
-    </script>
+    <h1>Big Bear Gallery</h1>
+    <div class="gallery">
+        <div class="image">
+            <img src="IMAGE_URL_1" alt="Big Bear 1">
+        </div>
+        <div class="image">
+            <img src="IMAGE_URL_2" alt="Big Bear 2">
+        </div>
+        <div class="image">
+            <img src="IMAGE_URL_3" alt="Big Bear 3">
+        </div>
+    </div>
 </body>
 </html>
 
