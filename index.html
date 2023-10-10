@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Big Bear Gallery</title>
-    <style>
-        .gallery {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .image {
-            max-width: 300px;
-        }
-    </style>
+  <style>
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
+      gap: 10px; /* Adjust the gap between images as needed */
+    }
+
+    .image-item {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <h1>Big Bear Gallery</h1>
-    <div class="gallery">
-        <div class="image">
-            <img src="Grizzly.jpg" alt="Big Bear 1">
-        </div>
-        <div class="image">
-            <img src="Polar.jpg" alt="Big Bear 2">
-        </div>
-        <div class="image">
-            <img src="Panda.jpg" alt="Big Bear 3">
-        </div>
+  <div class="image-grid">
+    <div class="image-item">
+      <img src="Panda.jpg" alt="Panda">
     </div>
+    <div class="image-item">
+      <img src="Grizzly.jpg" alt="Grizzly">
+    </div>
+    <div class="image-item">
+      <img src="Polar.jpg" alt="Polar">
+    </div>
+    <!-- Add more image items as needed -->
+  </div>
 </body>
 </html>
-
 
