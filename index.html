@@ -1,12 +1,19 @@
-// Set the radius to the current hour (in this case, 12)
-const currentHour = 12;
+function calculateCircumference() {
+  // Get the current hour from the Date object
+  const currentHour = new Date().getHours();
 
-// Calculate the circumference using C = 2πr
-const radius = currentHour;
-const circumference = 2 * Math.PI * radius;
+  // The radius of the circle is the current hour
+  const radius = currentHour;
 
-// Round the circumference to three decimal places
-const roundedCircumference = circumference.toFixed(3);
+  // Calculate the circumference
+  const circumference = 2 * Math.PI * radius;
 
-// Announce the result
-console.log(`The current circle's circumference, with a radius of ${radius}, is approximately ${roundedCircumference}.`);
+  // Round the circumference to three decimal places
+  const roundedCircumference = circumference.toFixed(3);
+
+  // Display the result
+  console.log(`The circumference of the circle with a radius of ${radius} (current hour) is approximately ${roundedCircumference}`);
+}
+
+calculateCircumference();
+
