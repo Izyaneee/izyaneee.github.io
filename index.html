@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Circumference Calculator</title>
+    <title>Television Comparison</title>
 </head>
 <body>
-  <p>The circumference of the circle will be displayed here:</p>
-  <p id="circumferenceDisplay"></p>
+    <h1>Television Comparison</h1>
+    <table border="1">
+        <caption>Television Comparison</caption>
+        <tr>
+            <th>TV Model</th>
+            <th>Price</th>
+            <th>Screen Size</th>
+            <th>Resolution</th>
+        </tr>
+        <tr>
+            <td>Samsung 4K Smart TV</td>
+            <td>$600</td>
+            <td>55 inches</td>
+            <td>4K Ultra HD</td>
+        </tr>
+        <tr>
+            <td>Sony OLED TV</td>
+            <td>$1200</td>
+            <td>65 inches</td>
+            <td>4K OLED</td>
+        </tr>
+        <tr>
+            <td>LG 8K NanoCell TV</td>
+            <td>$2000</td>
+            <td>75 inches</td>
+            <td>8K NanoCell</td>
+        </tr>
+    </table>
 
-  <script>
-    function calculateCircumference() {
-      // Get the current hour from the Date object
-      const currentHour = new Date().getHours();
-
-      // The radius of the circle is the current hour
-      const radius = currentHour;
-
-      // Calculate the circumference
-      const circumference = 2 * Math.PI * radius;
-
-      // Round the circumference to three decimal places
-      const roundedCircumference = circumference.toFixed(3);
-
-      // Display the result on the web page
-      const displayElement = document.getElementById('circumferenceDisplay');
-      displayElement.textContent = `The circumference of the circle with a radius of ${radius} (current hour) is approximately ${roundedCircumference}`;
-    }
-
-    calculateCircumference();
-  </script>
+    <h2>Conclusions:</h2>
+    <ul>
+        <li>The LG 8K NanoCell TV is the most expensive option among the televisions.</li>
+        <li>The Sony OLED TV has the largest screen size, offering 65 inches of display.</li>
+        <li>The Samsung 4K Smart TV provides an affordable option with a reasonable price of $600.</li>
+    </ul>
 </body>
 </html>
 
