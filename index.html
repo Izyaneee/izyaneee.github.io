@@ -1,19 +1,34 @@
-function calculateCircumference() {
-  // Get the current hour from the Date object
-  const currentHour = new Date().getHours();
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Circumference Calculator</title>
+</head>
+<body>
+  <p>The circumference of the circle will be displayed here:</p>
+  <p id="circumferenceDisplay"></p>
 
-  // The radius of the circle is the current hour
-  const radius = currentHour;
+  <script>
+    function calculateCircumference() {
+      // Get the current hour from the Date object
+      const currentHour = new Date().getHours();
 
-  // Calculate the circumference
-  const circumference = 2 * Math.PI * radius;
+      // The radius of the circle is the current hour
+      const radius = currentHour;
 
-  // Round the circumference to three decimal places
-  const roundedCircumference = circumference.toFixed(3);
+      // Calculate the circumference
+      const circumference = 2 * Math.PI * radius;
 
-  // Display the result
-  console.log(`The circumference of the circle with a radius of ${radius} (current hour) is approximately ${roundedCircumference}`);
-}
+      // Round the circumference to three decimal places
+      const roundedCircumference = circumference.toFixed(3);
 
-calculateCircumference();
+      // Display the result on the web page
+      const displayElement = document.getElementById('circumferenceDisplay');
+      displayElement.textContent = `The circumference of the circle with a radius of ${radius} (current hour) is approximately ${roundedCircumference}`;
+    }
+
+    calculateCircumference();
+  </script>
+</body>
+</html>
+
 
