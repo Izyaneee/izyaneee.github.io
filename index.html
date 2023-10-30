@@ -1,40 +1,49 @@
-import random
+// Create an array to represent the playing card deck values
+const deck = [
+  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, // Numbers and 10s
+  11, 11, 11, 11 // Four Aces
+];
 
-def deal_blackjack():
-    # Create a deck of cards with 4 sets of cards from 2 to 10 and 4 face cards (Jack, Queen, King, Ace).
-    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11] * 4
-    
-    # Shuffle the deck.
-    random.shuffle(deck)
-    
-    # Deal the first two cards.
-    first_card = deck.pop()
-    second_card = deck.pop()
-    
-    # Calculate the initial total.
-    total = first_card + second_card
-    
-    # Check for Blackjack (an Ace and a card worth 10).
-    if total == 21 and (first_card == 11 or second_card == 11):
-        print("Dealer has Blackjack!")
-        return
-    
-    # Print the initial total.
-    print(f"Dealer's initial total is: {total}")
-    
-    # Continue dealing cards based on dealer rules.
-    while total < 17:
-        new_card = deck.pop()
-        total += new_card
-        print(f"Dealer is hitting and draws a card worth {new_card}. Total is now: {total}")
-        
-        if total > 21:
-            print("Dealer busted!")
-            return
-    
-    # Dealer's final total is between 17 and 21.
-    print(f"Dealer's final total is: {total}")
+// Function to simulate dealing a card from the deck
+function dealCard() {
+  const randomIndex = Math.floor(Math.random() * deck.length);
+  return deck.splice(randomIndex, 1)[0];
+}
 
-# Run the simulation.
-deal_blackjack()
+// Function to play as the dealer
+function playDealer() {
+  let total = 0;
+
+  // Deal the first two cards
+  const card1 = dealCard();
+  const card2 = dealCard();
+  total = card1 + card2;
+
+  console.log(`Dealer's first two cards: ${card1} and ${card2}`);
+  
+  // Check for Blackjack
+  if (total === 21 && (card1 === 11 || card2 === 11)) {
+    console.log("Dealer has Blackjack!");
+    return;
+  }
+
+  // Play according to dealer rules
+  while (total < 17) {
+    const newCard = dealCard();
+    console.log(`Dealer hits and receives a ${newCard}`);
+    total += newCard;
+  }
+
+  console.log(`Dealer's total: ${total}`);
+
+  if (total > 21) {
+    console.log("Dealer busted!");
+  } else {
+    console.log("Dealer stays.");
+  }
+}
+
+// Run the dealer simulation
+playDealer();
+
 
