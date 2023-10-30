@@ -1,43 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Math Test</title>
-</head>
-<body>
-    <!-- Start of Math Test -->
-    <h1>Math Test</h1>
-    <form>
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <p>Multiple Choice Questions:</p>
-        <ol>
-            <li>
-                <label for="q1">What is 2 + 2?</label><br>
-                <input type="radio" id="q1" name="q1" value="4"> 4<br>
-                <input type="radio" id="q1" name="q1" value="5"> 5<br>
-                <input type="radio" id="q1" name="q1" value="3"> 3<br>
-            </li>
-            <li>
-                <label for="q2">What is 7 x 3?</label><br>
-                <input type="radio" id="q2" name="q2" value="21"> 21<br>
-                <input type="radio" id="q2" name="q2" value="28"> 28<br>
-                <input type="radio" id="q2" name="q2" value="14"> 14<br>
-            </li>
-            <li>
-                <label for="q3">What is 10 ÷ 2?</label><br>
-                <input type="radio" id="q3" name="q3" value="5"> 5<br>
-                <input type="radio" id="q3" name="q3" value="2"> 2<br>
-                <input type="radio" id="q3" name="q3" value="8"> 8<br>
-            </li>
-        </ol>
-        
-        <p>Word Problem:</p>
-        <label for="wordProblem">Solve the following equation:<br>(5 &times; 6) + (10 &divide; 2) = ?</label><br>
-        <textarea id="wordProblem" name="wordProblem" rows="4" cols="50" required></textarea><br><br>
+import random
 
-        <input type="submit" value="Submit">
-    </form>
-    <!-- End of Math Test -->
-</body>
-</html>
+def deal_blackjack():
+    # Create a deck of cards with 4 sets of cards from 2 to 10 and 4 face cards (Jack, Queen, King, Ace).
+    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11] * 4
+    
+    # Shuffle the deck.
+    random.shuffle(deck)
+    
+    # Deal the first two cards.
+    first_card = deck.pop()
+    second_card = deck.pop()
+    
+    # Calculate the initial total.
+    total = first_card + second_card
+    
+    # Check for Blackjack (an Ace and a card worth 10).
+    if total == 21 and (first_card == 11 or second_card == 11):
+        print("Dealer has Blackjack!")
+        return
+    
+    # Print the initial total.
+    print(f"Dealer's initial total is: {total}")
+    
+    # Continue dealing cards based on dealer rules.
+    while total < 17:
+        new_card = deck.pop()
+        total += new_card
+        print(f"Dealer is hitting and draws a card worth {new_card}. Total is now: {total}")
+        
+        if total > 21:
+            print("Dealer busted!")
+            return
+    
+    # Dealer's final total is between 17 and 21.
+    print(f"Dealer's final total is: {total}")
+
+# Run the simulation.
+deal_blackjack()
+
