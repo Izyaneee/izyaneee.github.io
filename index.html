@@ -6,22 +6,20 @@
 <body>
     <h1>Blackjack Dealer Simulator</h1>
     <button onclick="dealerPlay()">Start Dealer</button>
+    <p id="result"></p>
     
     <script>
-        // Define an array to represent a deck of cards
         const deck = [
-          2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, // Values for 2 through 10, Jack, Queen, King, and Ace
+          2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
           2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
           2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
           2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11
         ];
 
-        // Function to calculate the total value of a hand
         function calculateTotal(hand) {
           const sum = hand.reduce((total, card) => total + card, 0);
           const aces = hand.filter(card => card === 11).length;
 
-          // Check for Ace value adjustment to avoid busting
           while (sum > 21 && aces > 0) {
             sum -= 10;
             aces--;
@@ -30,38 +28,31 @@
           return sum;
         }
 
-        // Function to simulate the dealer's actions
         function dealerPlay() {
-          // Shuffle the deck (not a real shuffle, just for simulation)
           deck.sort(() => Math.random() - 0.5);
-
-          // Deal the first two cards
           const dealerHand = [deck.pop(), deck.pop()];
-
-          // Calculate the initial total
           const initialTotal = calculateTotal(dealerHand);
+          const resultElement = document.getElementById('result');
 
           if (initialTotal === 21) {
-            console.log("Dealer has Blackjack!");
+            resultElement.textContent = "Dealer has Blackjack!";
             return;
           }
 
-          console.log(`Dealer's initial total: ${initialTotal}`);
+          resultElement.textContent = `Dealer's initial total: ${initialTotal}`;
 
           while (initialTotal < 17) {
             dealerHand.push(deck.pop());
             initialTotal = calculateTotal(dealerHand);
-            console.log("Dealer is hitting.");
-            console.log(`Dealer's total: ${initialTotal}`);
+            resultElement.textContent = `Dealer is hitting. Dealer's total: ${initialTotal}`;
           }
 
           if (initialTotal > 21) {
-            console.log("Dealer busted!");
+            resultElement.textContent = "Dealer busted!";
           } else {
-            console.log("Dealer stays.");
+            resultElement.textContent = "Dealer stays.";
           }
         }
     </script>
 </body>
 </html>
-
