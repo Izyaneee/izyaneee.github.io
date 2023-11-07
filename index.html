@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+  <style>
+    .menu {
+      width: 400px;
+      height: 550px;
+      background-size: cover;
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
 
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-        }
+    .breakfast {
+      background-image: url('breakfast.jpg');
+      background-repeat: no-repeat;
+    }
 
-        th {
-            background-color: #dce2df;
-            font-weight: bold;
-        }
+    .lunch {
+      background-image: url('lunch.jpg');
+      background-position: center;
+    }
 
-        .color-cell {
-            font-weight: bold;
-        }
-    </style>
+    .dinner {
+      background-image: url('dinner.jpg');
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu li {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Pastel Dreams Color Scheme</h1>
-    <table>
-        <tr>
-            <th>Color Name</th>
-            <th>Hex Value</th>
-            <th>RGB Value</th>
-            <th>HSL Value</th>
-        </tr>
-        <tr>
-            <td class="color-cell" style="background-color: #FFB6C1;">Pink</td>
-            <td>#FFB6C1</td>
-            <td>rgb(255, 182, 193)</td>
-            <td>hsl(350, 100%, 85%)</td>
-        </tr>
-        <tr>
-            <td class="color-cell" style="background-color: #ADD8E6;">Light Blue</td>
-            <td>#ADD8E6</td>
-            <td>rgb(173, 216, 230)</td>
-            <td>hsl(195, 53%, 73%)</td>
-        </tr>
-        <tr>
-            <td class="color-cell" style="background-color: #98FB98;">Mint Green</td>
-            <td>#98FB98</td>
-            <td>rgb(152, 251, 152)</td>
-            <td>hsl(120, 93%, 79%)</td>
-        </tr>
-        <tr>
-            <td class="color-cell" style="background-color: #FFD700;">Gold</td>
-            <td>#FFD700</td>
-            <td>rgb(255, 215, 0)</td>
-            <td>hsl(51, 100%, 50%)</td>
-        </tr>
-    </table>
+  <div class="menu breakfast">
+    <h2>Breakfast Menu</h2>
+    <ul>
+      <li>Pancakes</li>
+      <li>Scrambled Eggs</li>
+      <li>Bacon</li>
+      <li>Orange Juice</li>
+      <li>Coffee</li>
+    </ul>
+  </div>
+
+  <div class="menu lunch">
+    <h2>Lunch Menu</h2>
+    <ul>
+      <li>Caesar Salad</li>
+      <li>Grilled Chicken Sandwich</li>
+      <li>French Fries</li>
+      <li>Iced Tea</li>
+      <li>Lemonade</li>
+    </ul>
+  </div>
+
+  <div class="menu dinner">
+    <h2>Dinner Menu</h2>
+    <ul>
+      <li>Filet Mignon</li>
+      <li>Lobster Tail</li>
+      <li>Mashed Potatoes</li>
+      <li>Red Wine</li>
+      <li>Chocolate Cake</li>
+    </ul>
+  </div>
 </body>
 </html>
