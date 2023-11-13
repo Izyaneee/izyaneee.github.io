@@ -1,74 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    .menu {
-      width: 400px;
-      height: 550px;
-      background-size: cover;
-      padding: 20px;
-      margin: 20px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-    }
-
-    .breakfast {
-      background-image: url('breakfast.jpg');
-      background-repeat: no-repeat;
-    }
-
-    .lunch {
-      background-image: url('lunch.jpg');
-      background-position: center;
-    }
-
-    .dinner {
-      background-image: url('dinner.jpg');
-    }
-
-    .menu ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .menu li {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Day Announcement</title>
 </head>
 <body>
-  <div class="menu breakfast">
-    <h2>Breakfast Menu</h2>
-    <ul>
-      <li>Pancakes($5)</li>
-      <li>Scrambled Eggs($8)</li>
-      <li>Bacon($12)</li>
-      <li>Orange Juice($2)</li>
-      <li>Coffee($2)</li>
-    </ul>
-  </div>
 
-  <div class="menu lunch">
-    <h2>Lunch Menu</h2>
-    <ul>
-      <li>Caesar Salad($5)</li>
-      <li>Grilled Chicken Sandwich($9)</li>
-      <li>French Fries($4)</li>
-      <li>Iced Tea($2.50)</li>
-      <li>Lemonade($2)</li>
-    </ul>
-  </div>
+<script>
+    // Function to check if it's a school day
+    function isSchoolDay(day) {
+        // Assuming Monday is 0 and Sunday is 6
+        return day >= 0 && day <= 4;
+    }
 
-  <div class="menu dinner">
-    <h2>Dinner Menu</h2>
-    <ul>
-      <li>Filet Mignon($8)</li>
-      <li>Lobster Tail($15)</li>
-      <li>Mashed Potatoes($5)</li>
-      <li>Red Wine($10)</li>
-      <li>Chocolate Cake($4)</li>
-    </ul>
-  </div>
+    // Function to announce school day and days left until the weekend
+    function announceSchoolDay(day) {
+        if (isSchoolDay(day)) {
+            console.log("Today is a school day.");
+            const daysLeft = 5 - day; // Assuming Saturday is the weekend
+            console.log("There are " + daysLeft + " days left until the weekend.");
+        } else {
+            console.log("Enjoy your weekend!");
+        }
+    }
+
+    // Get the current day of the week (0 for Sunday, 1 for Monday, etc.)
+    const today = new Date().getDay();
+
+    // Call the function to announce the school day
+    announceSchoolDay(today);
+</script>
+
 </body>
 </html>
+
+
