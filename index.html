@@ -3,36 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Day Announcement</title>
+    <title>Busy Day Schedule</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Style for one row */
+        .important-task {
+            background-color: #FFA07A;
+            font-weight: bold;
+        }
+
+        /* Style for one column */
+        .time-column {
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Style for table headers */
+        th.event-header {
+            text-transform: uppercase;
+        }
+
+        /* Style for the entire table */
+        .full-schedule {
+            border: 2px solid #333;
+        }
+
+        /* Style for all table cells */
+        td {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-<script>
-    // Function to check if it's a school day
-    function isSchoolDay(day) {
-        // Assuming Monday is 0 and Sunday is 6
-        return day >= 0 && day <= 4;
-    }
+    <h1>My Busy Day Schedule</h1>
 
-    // Function to announce school day and days left until the weekend
-    function announceSchoolDay(day) {
-        if (isSchoolDay(day)) {
-            console.log("Today is a school day.");
-            const daysLeft = 5 - day; // Assuming Saturday is the weekend
-            console.log("There are " + daysLeft + " days left until the weekend.");
-        } else {
-            console.log("Enjoy your weekend!");
-        }
-    }
-
-    // Get the current day of the week (0 for Sunday, 1 for Monday, etc.)
-    const today = new Date().getDay();
-
-    // Call the function to announce the school day
-    announceSchoolDay(today);
-</script>
+    <table class="full-schedule">
+        <tr>
+            <th class="event-header">Time</th>
+            <th class="event-header">Event</th>
+        </tr>
+        <tr class="important-task">
+            <td class="time-column">08:00 AM</td>
+            <td>Wake up and get ready</td>
+        </tr>
+        <tr>
+            <td class="time-column">09:00 AM</td>
+            <td>Math class</td>
+        </tr>
+        <tr>
+            <td class="time-column">11:00 AM</td>
+            <td>Lunch break</td>
+        </tr>
+        <tr class="important-task">
+            <td class="time-column">01:00 PM</td>
+            <td>Study for history exam</td>
+        </tr>
+        <tr>
+            <td class="time-column">03:00 PM</td>
+            <td>Soccer practice</td>
+        </tr>
+        <tr class="important-task">
+            <td class="time-column">06:00 PM</td>
+            <td>Science project work</td>
+        </tr>
+        <tr>
+            <td class="time-column">08:00 PM</td>
+            <td>Dinner with family</td>
+        </tr>
+        <tr class="important-task">
+            <td class="time-column">10:00 PM</td>
+            <td>Finish English essay</td>
+        </tr>
+    </table>
 
 </body>
 </html>
+
 
 
