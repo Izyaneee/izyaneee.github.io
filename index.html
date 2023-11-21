@@ -26,22 +26,22 @@
     }
 
     // Create five different person objects
-    var person1 = new Person('Suzie', 'Baby', 'Blue', 'Ferrets', 'Pizza', 'Harry Potter');
-    var person2 = new Person('John', 'It's You', 'Red', 'Dogs', 'Burgers', 'Spider-man');
-    var person3 = new Person('Alice', 'Butterflies', 'Green', 'Cats', 'Pasta', 'Inception');
-    var person4 = new Person('Bob', 'Heartbreak Anniversary', 'Yellow', 'Parrots', 'Burrito', 'Jaws');
-    var person5 = new Person('Charlie', 'Uptown Funk', 'Purple', 'Rabbits', 'Ice Cream', 'Cars');
+    var person1 = new Person('Suzie', 'Bohemian Rhapsody', 'Blue', 'Ferrets', 'Pizza', 'The Shawshank Redemption');
+    var person2 = new Person('John', 'Imagine', 'Red', 'Dogs', 'Burgers', 'The Godfather');
+    var person3 = new Person('Alice', 'Shape of You', 'Green', 'Cats', 'Pasta', 'The Dark Knight');
+    var person4 = new Person('Bob', 'Billie Jean', 'Yellow', 'Birds', 'Sushi', 'Pulp Fiction');
+    var person5 = new Person('Charlie', 'Hotel California', 'Purple', 'Rabbits', 'Ice Cream', 'Forrest Gump');
 
     // Choose the person object for the announcement
     var chosenPerson = person3; // Change this line to choose a different person
 
     // Create the announcement
     var announcement = chosenPerson.name + "'s favorite things:\n" +
-        chosenPerson.name + "'s favorite song is " + chosenPerson.favoriteSong + ".\n" +
+        chosenPerson.name + "'s favorite song is '" + chosenPerson.favoriteSong + "'.\n" +
         chosenPerson.name + "'s favorite color is " + chosenPerson.favoriteColor + ".\n" +
         chosenPerson.name + "'s favorite animal is " + chosenPerson.favoriteAnimal + ".\n" +
         chosenPerson.name + "'s favorite food is " + chosenPerson.favoriteFood + ".\n" +
-        chosenPerson.name + "'s favorite movie is " + chosenPerson.favoriteMovie + ".";
+        chosenPerson.name + "'s favorite movie is '" + chosenPerson.favoriteMovie + "'.";
 
     // Display the announcement
     alert(announcement);
@@ -49,6 +49,7 @@
 
 </body>
 </html>
+
 
 
 
