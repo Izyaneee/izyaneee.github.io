@@ -3,105 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busy Day Schedule</title>
+    <title>Person's Favorite Things</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        /* Style for one row */
-        .important-task {
-            background-color: #FFA07A;
-            font-weight: bold;
-        }
-
-        /* Style for one column */
-        .time-column {
+            font-family: Arial, sans-serif;
             text-align: center;
-            font-style: italic;
-        }
-
-        /* Style for table headers */
-        th.event-header {
-            text-transform: uppercase;
-        }
-
-        /* Style for the entire table */
-        .full-schedule {
-            border: 2px solid #333;
-        }
-
-        /* Style for all table cells */
-        td {
-            color: #333;
+            margin: 50px;
         }
     </style>
 </head>
 <body>
 
-    <h1>My Busy Day Schedule</h1>
+<script>
+    // Define a prototype for a person
+    function Person(name, favoriteSong, favoriteColor, favoriteAnimal, favoriteFood, favoriteMovie) {
+        this.name = name;
+        this.favoriteSong = favoriteSong;
+        this.favoriteColor = favoriteColor;
+        this.favoriteAnimal = favoriteAnimal;
+        this.favoriteFood = favoriteFood;
+        this.favoriteMovie = favoriteMovie;
+    }
 
-    <table class="full-schedule">
-        <tr>
-            <th class="event-header">Time</th>
-            <th class="event-header">Event</th>
-        </tr>
-        <tr class="important-task">
-            <td class="time-column">08:00 AM</td>
-            <td>Wake up and get ready</td>
-        </tr>
-        <tr>
-            <td class="time-column">09:00 AM</td>
-            <td>Math class</td>
-        </tr>
-        <tr>
-            <td class="time-column">11:00 AM</td>
-            <td>Lunch break</td>
-        </tr>
-        <tr class="important-task">
-            <td class="time-column">01:00 PM</td>
-            <td>Study for history exam</td>
-        </tr>
-        <tr>
-            <td class="time-column">03:00 PM</td>
-            <td>Soccer practice</td>
-        </tr>
-        <tr class="important-task">
-            <td class="time-column">06:00 PM</td>
-            <td>Science project work</td>
-        </tr>
-        <tr>
-            <td class="time-column">08:00 PM</td>
-            <td>Dinner with family</td>
-        </tr>
-        <tr class="important-task">
-            <td class="time-column">10:00 PM</td>
-            <td>Finish English essay</td>
-        </tr>
-    </table>
+    // Create five different person objects
+    var person1 = new Person('Suzie', 'Song1', 'Blue', 'Ferrets', 'Pizza', 'Movie1');
+    var person2 = new Person('John', 'Song2', 'Red', 'Dogs', 'Burgers', 'Movie2');
+    var person3 = new Person('Alice', 'Song3', 'Green', 'Cats', 'Pasta', 'Movie3');
+    var person4 = new Person('Bob', 'Song4', 'Yellow', 'Birds', 'Sushi', 'Movie4');
+    var person5 = new Person('Charlie', 'Song5', 'Purple', 'Rabbits', 'Ice Cream', 'Movie5');
+
+    // Choose the person object for the announcement
+    var chosenPerson = person3; // Change this line to choose a different person
+
+    // Create the announcement
+    var announcement = chosenPerson.name + "'s favorite things:\n" +
+        chosenPerson.name + "'s favorite song is " + chosenPerson.favoriteSong + ".\n" +
+        chosenPerson.name + "'s favorite color is " + chosenPerson.favoriteColor + ".\n" +
+        chosenPerson.name + "'s favorite animal is " + chosenPerson.favoriteAnimal + ".\n" +
+        chosenPerson.name + "'s favorite food is " + chosenPerson.favoriteFood + ".\n" +
+        chosenPerson.name + "'s favorite movie is " + chosenPerson.favoriteMovie + ".";
+
+    // Display the announcement
+    alert(announcement);
+</script>
 
 </body>
 </html>
