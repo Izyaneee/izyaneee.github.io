@@ -32,19 +32,44 @@
     var person4 = new Person('Bob', 'Billie Jean', 'Yellow', 'Birds', 'Sushi', 'Pulp Fiction');
     var person5 = new Person('Charlie', 'Hotel California', 'Purple', 'Rabbits', 'Ice Cream', 'Forrest Gump');
 
-    // Choose the person object for the announcement
-    var chosenPerson = person3; // Change this line to choose a different person
+    // Prompt the user to enter a person's name
+    var userInput = prompt("Enter the name of a person (Suzie, John, Alice, Bob, Charlie):");
+    
+    // Find the person object based on user input
+    var chosenPerson;
 
-    // Create the announcement
-    var announcement = chosenPerson.name + "'s favorite things:\n" +
-        chosenPerson.name + "'s favorite song is '" + chosenPerson.favoriteSong + "'.\n" +
-        chosenPerson.name + "'s favorite color is " + chosenPerson.favoriteColor + ".\n" +
-        chosenPerson.name + "'s favorite animal is " + chosenPerson.favoriteAnimal + ".\n" +
-        chosenPerson.name + "'s favorite food is " + chosenPerson.favoriteFood + ".\n" +
-        chosenPerson.name + "'s favorite movie is '" + chosenPerson.favoriteMovie + "'.";
+    switch (userInput.toLowerCase()) {
+        case 'suzie':
+            chosenPerson = person1;
+            break;
+        case 'john':
+            chosenPerson = person2;
+            break;
+        case 'alice':
+            chosenPerson = person3;
+            break;
+        case 'bob':
+            chosenPerson = person4;
+            break;
+        case 'charlie':
+            chosenPerson = person5;
+            break;
+        default:
+            alert("Person not found.");
+            break;
+    }
 
-    // Display the announcement
-    alert(announcement);
+    // If a person is found, create and display the announcement
+    if (chosenPerson) {
+        var announcement = chosenPerson.name + "'s favorite things:\n" +
+            chosenPerson.name + "'s favorite song is '" + chosenPerson.favoriteSong + "'.\n" +
+            chosenPerson.name + "'s favorite color is " + chosenPerson.favoriteColor + ".\n" +
+            chosenPerson.name + "'s favorite animal is " + chosenPerson.favoriteAnimal + ".\n" +
+            chosenPerson.name + "'s favorite food is " + chosenPerson.favoriteFood + ".\n" +
+            chosenPerson.name + "'s favorite movie is '" + chosenPerson.favoriteMovie + "'.";
+        
+        alert(announcement);
+    }
 </script>
 
 </body>
