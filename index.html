@@ -50,12 +50,16 @@
       const { totalSlices, uniqueToppings } = calculatePizzaNeeds(guestList);
       const commonToppings = findCommonToppings(guestList);
 
+      const resultDiv = document.createElement('div');
+
       if (commonToppings.length > 0) {
-        console.log(`You'll need ${totalSlices} slices of pizza.`);
-        console.log(`Topping options: ${commonToppings.join(', ')}`);
+        resultDiv.innerHTML = `<p>You'll need ${totalSlices} slices of pizza.</p>`;
+        resultDiv.innerHTML += `<p>Topping options: ${commonToppings.join(', ')}</p>`;
       } else {
-        console.log("Looks like your guests can't agree on toppings. Just get plain pizza!");
+        resultDiv.innerHTML = "<p>Looks like your guests can't agree on toppings. Just get plain pizza!</p>";
       }
+
+      document.body.appendChild(resultDiv);
     }
 
     // Ask for guest names
@@ -67,5 +71,6 @@
 
 </body>
 </html>
+
 
 
