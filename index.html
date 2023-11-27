@@ -3,94 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-
-    nav {
-      float: right;
-      margin: 10px;
-    }
-
-    section {
-      clear: both;
-      padding: 20px;
-    }
-
-    .team-member {
-      width: 200px;
-      float: left;
-      margin: 20px;
-      text-align: center;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 50%;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
-  <title>Our Team</title>
+  <title>Pizza Party Planner</title>
 </head>
 <body>
 
-  <header>
-    <h1>Meet Our Team</h1>
-    <nav>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <script>
+    // Define guest information
+    const guests = {
+      Jane: { slices: 2, toppings: ['Mushroom', 'Onion', 'Peppers', 'Olives'] },
+      Lisa: { slices: 3, toppings: ['Pepperoni', 'Ham', 'Pineapple'] },
+      Taylor: { slices: 3, toppings: ['Extra cheese', 'Pepperoni', 'Sausage', 'Bacon'] },
+      Chris: { slices: 2, toppings: ['Mushroom', 'Sausage', 'Bacon', 'Ham', 'Onion', 'Peppers'] },
+      Alyssa: { slices: 1, toppings: ['Pepperoni', 'Bacon'] },
+      Will: { slices: 2, toppings: ['Extra cheese', 'Sausage', 'Bacon', 'Onion', 'Peppers', 'Olives'] },
+      Jessica: { slices: 2, toppings: ['Pepperoni', 'Bacon', 'Ham', 'Pineapple', 'Onion', 'Peppers'] }
+    };
 
-  <section>
-    <div class="team-member">
-      <img src="tom.jpg" alt="Tom - The Cat">
-      <h2>Tom</h2>
-      <p>A playful cat who loves chasing after yarn balls and taking long naps in the sun.</p>
-    </div>
+    // Function to calculate total slices and toppings
+    function calculatePizzaNeeds(guestList) {
+      let totalSlices = 0;
+      let allToppings = [];
 
-    <div class="team-member">
-      <img src="laila.jpg" alt="Laila - The Dog">
-      <h2>Laila</h2>
-      <p>An energetic dog who enjoys going for walks, playing fetch, and getting belly rubs.</p>
-    </div>
+      for (const guest of guestList) {
+        totalSlices += guests[guest].slices;
+        allToppings = allToppings.concat(guests[guest].toppings);
+      }
 
-    <div class="team-member">
-      <img src="theodore.jpg" alt="Theodore - The Guinea Pig">
-      <h2>Theodore</h2>
-      <p>A cute guinea pig who loves munching on fresh veggies and exploring his cozy cage.</p>
-    </div>
+      // Remove duplicate toppings
+      const uniqueToppings = [...new Set(allToppings)];
 
-    <div class="team-member">
-      <img src="jerry.jpg" alt="Jerry - The Mouse">
-      <h2>Jerry</h2>
-      <p>A clever mouse who enjoys nibbling on cheese and navigating through mazes with ease.</p>
-    </div>
-  </section>
+      return { totalSlices, uniqueToppings };
+    }
 
-  <footer>
-    Have a Great Day.
-  </footer>
+    // Function to check if there are toppings everyone agrees on
+    function findCommonToppings(guestList) {
+      const firstGuest = guestList[0];
+      const commonToppings = guests[firstGuest].toppings.filter(topping => {
+        return guestList.every(guest => guests[guest].toppings.includes(topping));
+      });
+
+      return commonToppings;
+    }
+
+    // Function to display results
+    function displayResults(guestList) {
+      const { totalSlices, uniqueToppings } = calculatePizzaNeeds(guestList);
+      const commonToppings = findCommonToppings(guestList);
+
+      if (commonToppings.length > 0) {
+        console.log(`You'll need ${totalSlices} slices of pizza.`);
+        console.log(`Topping options: ${commonToppings.join(', ')}`);
+      } else {
+        console.log("Looks like your guests can't agree on toppings. Just get plain pizza!");
+      }
+    }
+
+    // Ask for guest names
+    const guestNames = prompt("Who is coming over? (Separate names with commas)").split(',').map(name => name.trim());
+
+    // Display results based on entered guests
+    displayResults(guestNames);
+  </script>
 
 </body>
 </html>
+
 
