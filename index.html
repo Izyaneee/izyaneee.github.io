@@ -3,74 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Party Planner</title>
+  <style>
+    /* CSS Grid Layout */
+    body {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "about puzzle date";
+      grid-template-rows: 100px auto 50px;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 10px;
+      height: 100vh;
+      margin: 0;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    #about {
+      grid-area: about;
+    }
+
+    #puzzle {
+      grid-area: puzzle;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    #date {
+      grid-area: date;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    /* Flexbox Puzzle */
+    #puzzle img {
+      width: 100px; /* Adjust the width of puzzle pieces accordingly */
+      height: 100px; /* Adjust the height of puzzle pieces accordingly */
+      object-fit: cover;
+    }
+
+    /* Add your Flex container properties here to solve the puzzle */
+
+    /* Add the faulty puzzle piece image in the image folder */
+    /* Add the correct puzzle piece images in the image folder */
+
+    /* Use the display property to hide the faulty puzzle piece */
+
+    #puzzle img:last-child {
+      display: none; /* This hides the faulty puzzle piece */
+    }
+  </style>
+  <script>
+    // You can add JavaScript code here if needed
+  </script>
 </head>
 <body>
 
-  <script>
-    // Define guest information
-    const guests = {
-      Jane: { slices: 2, toppings: ['Mushroom', 'Onion', 'Peppers', 'Olives'] },
-      Lisa: { slices: 3, toppings: ['Pepperoni', 'Ham', 'Pineapple'] },
-      Taylor: { slices: 3, toppings: ['Extra cheese', 'Pepperoni', 'Sausage', 'Bacon'] },
-      Chris: { slices: 2, toppings: ['Mushroom', 'Sausage', 'Bacon', 'Ham', 'Onion', 'Peppers'] },
-      Alyssa: { slices: 1, toppings: ['Pepperoni', 'Bacon'] },
-      Will: { slices: 2, toppings: ['Extra cheese', 'Sausage', 'Bacon', 'Onion', 'Peppers', 'Olives'] },
-      Jessica: { slices: 2, toppings: ['Pepperoni', 'Bacon', 'Ham', 'Pineapple', 'Onion', 'Peppers'] }
-    };
+  <header>Assignment</header>
 
-    // Function to calculate total slices and toppings
-    function calculatePizzaNeeds(guestList) {
-      let totalSlices = 0;
-      let allToppings = [];
+  <section id="about">
+    <p>Hey My Names Izyan!!! I have set a puzzle for you!</p>
+  </section>
 
-      for (const guest of guestList) {
-        totalSlices += guests[guest].slices;
-        allToppings = allToppings.concat(guests[guest].toppings);
-      }
+<section id="puzzle">
+  <img src="images/puzzle1_A.jpg" alt="Puzzle 1, Piece A">
+  <img src="images/puzzle1_B.jpg" alt="Puzzle 1, Piece B">
+  <img src="images/puzzle1_C.jpg" alt="Puzzle 1, Piece C">
+  <img src="images/puzzle1_D.jpg" alt="Puzzle 1, Piece D">
+  <img src="images/puzzle1_E.jpg" alt="Puzzle 1, Piece E">
+  <img src="images/puzzle1_F.jpg" alt="Puzzle 1, Piece F">
+  <img src="images/puzzle1_G.jpg" alt="Puzzle 1, Piece G">
+  <img src="images/puzzle1_H.jpg" alt="Puzzle 1, Piece H">
+  <img src="images/puzzle1_I.jpg" alt="Puzzle 1, Piece I">
+  <img src="images/puzzle1_J.jpg" alt="Puzzle 1, Piece J">
+  <img src="images/puzzle1_K.jpg" alt="Puzzle 1, Piece K">
+  <img src="images/puzzle1_L.jpg" alt="Puzzle 1, Piece L">
+  <img src="images/puzzle1_M.jpg" alt="Puzzle 1, Piece M">
+  <img src="images/puzzle1_N.jpg" alt="Puzzle 1, Piece N">
+  <img src="images/puzzle1_O.jpg" alt="Puzzle 1, Piece O">
+  <img src="images/puzzle1_P.jpg" alt="Puzzle 1, Piece P">
+  <img src="images/puzzle1_Q.jpg" alt="Puzzle 1, Piece Q">
+</section>
 
-      // Remove duplicate toppings
-      const uniqueToppings = [...new Set(allToppings)];
 
-      return { totalSlices, uniqueToppings };
-    }
-
-    // Function to check if there are toppings everyone agrees on
-    function findCommonToppings(guestList) {
-      const firstGuest = guestList[0];
-      const commonToppings = guests[firstGuest].toppings.filter(topping => {
-        return guestList.every(guest => guests[guest].toppings.includes(topping));
-      });
-
-      return commonToppings;
-    }
-
-    // Function to display results
-    function displayResults(guestList) {
-      const { totalSlices, uniqueToppings } = calculatePizzaNeeds(guestList);
-      const commonToppings = findCommonToppings(guestList);
-
-      const resultDiv = document.createElement('div');
-
-      if (commonToppings.length > 0) {
-        resultDiv.innerHTML = `<p>You'll need ${totalSlices} slices of pizza.</p>`;
-        resultDiv.innerHTML += `<p>Topping options: ${commonToppings.join(', ')}</p>`;
-      } else {
-        resultDiv.innerHTML = "<p>Looks like your guests can't agree on toppings. Just get plain pizza!</p>";
-      }
-
-      document.body.appendChild(resultDiv);
-    }
-
-    // Ask for guest names
-    const guestNames = prompt("Who is coming over? (Separate names with commas)").split(',').map(name => name.trim());
-
-    // Display results based on entered guests
-    displayResults(guestNames);
-  </script>
+  <section id="date">
+    <p>30th November 2023</p>
+  </section>
 
 </body>
 </html>
+
 
 
 
