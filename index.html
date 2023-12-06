@@ -1,112 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* CSS Grid Layout */
-    body {
-      display: grid;
-      grid-template-areas:
-        "header header header"
-        "about puzzle date";
-      grid-template-rows: 100px auto 50px;
-      grid-template-columns: 1fr 2fr 1fr;
-      gap: 10px;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
 
-    header {
-      grid-area: header;
-      background-color: #333;
-      color: white;
-      text-align: center;
-      line-height: 100px;
-    }
+        input {
+            margin-bottom: 10px;
+        }
 
-    #about {
-      grid-area: about;
-    }
-
-    #puzzle {
-      grid-area: puzzle;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    #date {
-      grid-area: date;
-      text-align: center;
-      line-height: 50px;
-    }
-
-    /* Flexbox Puzzle */
-    #puzzle img {
-      width: 150px; /* Adjust the width of puzzle pieces accordingly */
-      height: 110px; /* Adjust the height of puzzle pieces accordingly */
-      object-fit: cover;
-    
-    }
-
-    /* Add your Flex container properties here to solve the puzzle */
-
-    /* Add the faulty puzzle piece image in the image folder */
-    #puzzle img[src="puzzle1_D.jpg"] {
-      display: none;
-    }
-    /* Add the correct puzzle piece images in the image folder */
-
-    /* Use the display property to hide the faulty puzzle piece */
-
-    #puzzle img:last-child {
-      display: none; /* This hides the faulty puzzle piece */
-    }
-  </style>
-  <script>
-    // You can add JavaScript code here if needed
-  </script>
+        #story {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Mad Libs Story</h1>
 
-  <header>Puzzle</header>
+    <label for="adjective">Adjective:</label>
+    <input type="text" id="adjective">
 
-  <section id="about">
-    <p>Hey My Names Izyan!!!</p>
-    <p>I have set a puzzle for you!</p>
-  </section>
+    <label for="noun">Noun:</label>
+    <input type="text" id="noun">
 
-<section id="puzzle">
-  <img src="puzzle1_Q.jpg">
-  <img src="puzzle1_G.jpg">
-  <img src="puzzle1_A.jpg">
-  <img src="puzzle1_J.jpg">
-  <img src="puzzle1_M.jpg">
-  <img src="puzzle1_P.jpg">
-  <img src="puzzle1_B.jpg">
-  <img src="puzzle1_H.jpg">
-  <img src="puzzle1_O.jpg">
-  <img src="puzzle1_E.jpg">
-  <img src="puzzle1_N.jpg">
-  <img src="puzzle1_C.jpg">
-  <img src="puzzle1_I.jpg">
-  <img src="puzzle1_F.jpg">
-  <img src="puzzle1_L.jpg">
-  <img src="puzzle1_L.jpg">
-  <img src="puzzle1_D.jpg">
-</section>
+    <label for="celebrity">Celebrity:</label>
+    <input type="text" id="celebrity">
 
+    <label for="place">Place:</label>
+    <input type="text" id="place">
 
+    <label for="adverb">Adverb:</label>
+    <input type="text" id="adverb">
 
-  <section id="date">
-    <p>30th November 2023</p>
-  </section>
+    <button onclick="generateStory()">Generate Story</button>
 
+    <div id="story">
+        <h2>Your Mad Libs Story:</h2>
+        <p id="madLibsStory"></p>
+    </div>
+
+    <script>
+        function generateStory() {
+            // Get user input
+            var adjective = document.getElementById('adjective').value;
+            var noun = document.getElementById('noun').value;
+            var celebrity = document.getElementById('celebrity').value;
+            var place = document.getElementById('place').value;
+            var adverb = document.getElementById('adverb').value;
+
+            // Create the Mad Libs story
+            var madLibsStory = `Once upon a time, there was a ${adjective} ${noun} who met ${celebrity} at ${place}. They quickly became friends and decided to ${adverb} explore the world together.`;
+
+            // Display the story
+            document.getElementById('madLibsStory').innerHTML = madLibsStory;
+            document.getElementById('story').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
-
-
-
-
