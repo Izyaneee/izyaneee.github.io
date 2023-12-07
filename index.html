@@ -2,67 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mad Libs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        input {
-            margin-bottom: 10px;
-        }
-
-        #story {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Golf Scorecard</title>
 </head>
 <body>
-    <h1>Mad Libs Story</h1>
-
-    <label for="adjective">Adjective:</label>
-    <input type="text" id="adjective">
-
-    <label for="noun">Noun:</label>
-    <input type="text" id="noun">
-
-    <label for="celebrity">Celebrity:</label>
-    <input type="text" id="celebrity">
-
-    <label for="place">Place:</label>
-    <input type="text" id="place">
-
-    <label for="adverb">Adverb:</label>
-    <input type="text" id="adverb">
-
-    <button onclick="generateStory()">Generate Story</button>
-
-    <div id="story">
-        <h2>Your Mad Libs Story:</h2>
-        <p id="madLibsStory"></p>
-    </div>
-
-    <script>
-        function generateStory() {
-            // Get user input
-            var adjective = document.getElementById('adjective').value;
-            var noun = document.getElementById('noun').value;
-            var celebrity = document.getElementById('celebrity').value;
-            var place = document.getElementById('place').value;
-            var adverb = document.getElementById('adverb').value;
-
-            // Create the Mad Libs story
-            var madLibsStory = `Once upon a time, there was a ${adjective} ${noun} who met ${celebrity} at ${place}. They quickly became friends and decided to ${adverb} explore the world together.`;
-
-            // Display the story
-            document.getElementById('madLibsStory').innerHTML = madLibsStory;
-            document.getElementById('story').style.display = 'block';
-        }
-    </script>
+    <h1>Golf Scorecard</h1>
+    <table class="scorecard golf">
+        <!-- Golf Scorecard content goes here -->
+    </table>
 </body>
 </html>
+
