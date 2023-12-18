@@ -1,40 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
     text-align: center;
+    padding: 1em;
 }
 
-h1 {
-    color: #333;
+section {
+    max-width: 800px;
+    margin: 2em auto;
 }
 
-.scorecard {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+.step {
+    margin-bottom: 2em;
 }
 
-.scorecard th, .scorecard td {
-    padding: 10px;
-    border: 1px solid #ddd;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.scorecard tr:nth-child(even) {
-    background-color: #f2f2f2;
+#embedded-video {
+    margin-top: 4em;
 }
 
-.scorecard golf th, .scorecard golf td {
-    background-color: #87CEEB;
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.scorecard baseball th, .scorecard baseball td {
-    background-color: #FF6347;
-}
-
-.scorecard board-game th, .scorecard board-game td {
-    background-color: #98FB98;
-}
-
-/* Pseudo class example */
-.scorecard tr:hover {
-    background-color: #e0e0e0;
-}
