@@ -7,7 +7,9 @@
     display: block;
     width: auto;
     height: auto;
-    filter: hue-rotate(110deg);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    filter: hue-rotate(110deg); 
+  -webkit-filter: drop-shadow(-5px -5px 5px #000000);
+  filter: drop-shadow(-5px -5px 5px #000000);
+
 }
 
