@@ -8,6 +8,7 @@
     width: auto;
     height: auto;
     filter: brightness(110%) saturate(150%) hue-rotate(220deg);  /* Green filter */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);  /* Black shadow */
+    -webkit-filter: drop-shadow(-5px -5px 5px #000000);
+  filter: drop-shadow(-5px -5px 5px #000000);
 }
 
