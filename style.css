@@ -7,7 +7,7 @@
     display: block;
     width: auto;
     height: auto;
-    filter: brightness(1.5) saturate(1.5) hue-rotate(120deg);  /* Green filter */
+    filter: brightness(110%) saturate(150%) hue-rotate(220deg);  /* Green filter */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);  /* Black shadow */
 }
 
