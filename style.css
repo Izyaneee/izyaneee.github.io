@@ -1,0 +1,18 @@
+.dinosaur-container {
+    position: relative;
+    width: fit-content;  /* Adjust as needed */
+}
+
+.dinosaur-image, .dinosaur-shadow {
+    display: block;
+    width: auto;
+    height: auto;
+    filter: brightness(1.5) saturate(1.5) hue-rotate(120deg);  /* Green filter */
+}
+
+.dinosaur-shadow {
+    position: absolute;
+    bottom: -10px;  /* Adjust the offset as needed for your desired shadow depth */
+    left: 10px;    /* Adjust the offset as needed for your desired shadow direction */
+    filter: brightness(0.5) saturate(0) grayscale(100%);  /* Black filter */
+}
