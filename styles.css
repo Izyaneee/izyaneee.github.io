@@ -8,6 +8,6 @@
     width: auto;
     height: auto;
     filter: brightness(110%) saturate(150%) hue-rotate(110deg);
- drop-shadow(-5px -5px 5px #000000);
+    drop-shadow(-5px -5px 5px #000000);
 }
 
