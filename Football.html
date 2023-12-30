@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Field with Tic-Tac-Toe</title>
     <style>
-        .football {
+        .football-field {
             position: relative;
             background-image: url("football.jpg");
-            width: 500; /* Or any other width you prefer */
-            height: 230;
+            width: 500px;
+            height: 230px;
             background-size: cover;
 
-            filter: grayscale(100%);
-
             border: solid #000;
-            border-image: url("tictactoe.png") round; /* This should point to your actual border image */;
+            border-image: url("tictactoe.png") round; /* Ensure this path is correct */
             border-width: auto;
+        }
+
+        /* Optional: Remove if you don't want grayscale effect */
+        .football-field::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
     </style>
 </head>
 
 <body>
     <div class="field">
-        <div class="football"></div>
+        <div class="football-field"></div>
     </div>
 </body>
 
 </html>
+
 
