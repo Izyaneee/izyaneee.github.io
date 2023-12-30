@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Butterfly</title>
     <style>
-     .butterfly {
+        .butterfly {
             position: relative; /* Needed for absolute positioning of the pseudo-element */
             border-radius: 70px 0px 70px 0px / 70px 0px 70px 0px;
             background-image: url("butterfly.jpg");
@@ -13,14 +13,10 @@
             height: 200px; /* Or any other height you prefer */
             background-size: cover; /* To ensure the background image covers the entire div */
 
-            /* Convert blue to white */
-            filter: brightness(110%) saturate(150%);
-
-            /* Invert the entire image */
-            /* filter: invert(100%); */  /* Uncomment this line if you want to invert the entire image */
+            filter: hue-rotate(180deg) saturate(50%) invert(100%);
         }
 
-        /* If you want to overlay a specific color */
+        /* Pseudo-element to overlay the specific color */
         .butterfly::before {
             content: ""; /* Required for the pseudo-element to render */
             position: absolute;
@@ -28,8 +24,8 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: yellow; /* Or any other color you want */
-            mix-blend-mode: screen; /* This will allow the color to blend with the image */
+            background-color: blue; /* Replace with the specific color you want to retain */
+            mix-blend-mode: screen; /* This will allow the color to blend with the inverted image */
             opacity: 0.5; /* Adjust the opacity as needed */
         }
     </style>
@@ -38,4 +34,5 @@
     <div class="butterfly"></div>
 </body>
 </html>
+
 
