@@ -7,10 +7,7 @@
     display: block;
     width: auto;
     height: auto;
-    filter: hue-rotate(110deg); 
+    filter: hue-rotate(110deg) drop-shadow(5px 5px 5px #000000); /* Combine filters */
 }
-.dinosaur-image {
-  -webkit-filter: drop-shadow(5px 5px 5px #000000);
-  filter: drop-shadow(5px 5px 5px #000000);
-}
+
 
