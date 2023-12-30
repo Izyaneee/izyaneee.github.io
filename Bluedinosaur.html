@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Dinosaur</title>
     <style>
+        .image-with-shadow {
+            width: 300px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, and color */
+        }
         body {
             display: flex;
             justify-content: center;
@@ -12,16 +17,17 @@
             height: 100vh;
         }
         .dinosaur {
-            width: 300px;
-            height: 200px;
+            width: auto;
+            height: auto;
             background-image: url('dinosaur.jpg');
             background-size: cover;
-            filter: hue-rotate(180deg) brightness(100%);
+            filter: hue-rotate(120deg) brightness(100%);
         }
     </style>
 </head>
 <body>
     <div class="dinosaur"></div>
+    <img src="dinosaur.jpg" alt="Fruit" class="image-with-shadow">
 </body>
 </html>
 
