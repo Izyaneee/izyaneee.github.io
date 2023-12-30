@@ -6,14 +6,28 @@
     <title>Blue Butterfly</title>
     <style>
      .butterfly {
-        border-radius: 70px 0px 70px 0px / 70px 0px 70px 0px;
-        background-image: url("butterfly.jpg");
-        width: 300px; /* Or any other width you prefer */
-        height: 200px; /* Or any other height you prefer */
-        background-size: cover; /* To ensure the background image covers the entire div */
+            position: relative; /* Needed for absolute positioning of the pseudo-element */
+            border-radius: 70px 0px 70px 0px / 70px 0px 70px 0px;
+            background-image: url("butterfly.jpg");
+            width: 300px; /* Or any other width you prefer */
+            height: 200px; /* Or any other height you prefer */
+            background-size: cover; /* To ensure the background image covers the entire div */
 
-        filter: hue-rotate(180deg) saturate(50%) invert(100%);
-    }
+            filter: invert(100%);
+        }
+
+        /* Pseudo-element to overlay the specific color */
+        .butterfly::before {
+            content: ""; /* Required for the pseudo-element to render */
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: blue; /* Replace with the specific color you want to retain */
+            mix-blend-mode: screen; /* This will allow the color to blend with the inverted image */
+            opacity: 0.5; /* Adjust the opacity as needed */
+        }
     </style>
 </head>
 <body>
