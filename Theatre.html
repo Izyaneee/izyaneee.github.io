@@ -4,32 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theatre</title>
+    <title>Blurred Image with Text</title>
     <style>
-    .theatre {
-            background-image: url("theaterstage.jpg");
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px);
+        .container {
+            position: relative;
+            width: 600px; /* Adjust this value as needed */
+            margin: 0 auto; /* Centers the container */
         }
 
-        .theatre::before {
-            content: "presenting";
+        .image {
+            width: 100%;
+            height: auto;
+            filter: blur(5px); /* Adjust the blur value as needed */
+        }
+
+        .text-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Centering the text */
-            font-size: 2em; /* Adjust font size as needed */
-            color: white; /* Text color */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+            transform: translate(-50%, -50%);
+            font-size: 36px; /* Adjust the font size as needed */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better visibility */
         }
     </style>
 </head>
 
 <body>
-    <div class="theatre"></div>
+
+    <div class="container">
+        <img src="theaterstage.jpg" alt="Theater Stage" class="image">
+        <div class="text-overlay">presenting</div>
+    </div>
+
 </body>
 
 </html>
+
 
 
