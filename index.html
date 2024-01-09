@@ -1,24 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Image Transformations</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards Review</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 200px;
+        height: 150px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .card .question, .card .answer {
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease;
+    }
+
+    .card .question {
+        z-index: 2;
+        background-color: rgba(0, 123, 255, 0.7);
+    }
+
+    .card:hover .answer {
+        opacity: 1;
+    }
+
+    .card .answer {
+        opacity: 0;
+        z-index: 1;
+        background-color: rgba(0, 123, 255, 0.9);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
 </head>
 <body>
-    <h1>Image Transformations</h1>
-    <div class="image-container">
-        <img src="images/butterfly.jpg" alt="Butterfly" class="transform butterfly">
-        <img src="images/dinosaur.jpg" alt="Dinosaur" class="transform dinosaur">
-        <div class="football_field transform"></div>
-        <img src="images/penguins.jpg" alt="Penguins" class="transform penguins">
-        <img src="images/seagull.jpg" alt="Seagull" class="transform seagull">
-        <div class="theatre_stage transform"></div>
-        <div class="tic_tac_toe transform"></div>
-    </div>
+<h1>Flashcards Review</h1>
+<div class="card">
+    <div class="question">What is the kinetic energy of a 72.2 kg cheetah moving at a velocity of 25.9 m/s?</div>
+    <div class="answer">24,160.981 J</div>
+</div>
+<div class="card">
+    <div class="question">What is the gravitational potential energy of a 4250 kg cart at the top of a 56.5 m hill?</div>
+    <div class="answer">417,000 J</div>
+</div>
+<div class="card">
+    <div class="question">A 142 g baseball is thrown at a speed of 42.9 m/s. What is the kinetic energy of the baseball at this moment?</div>
+    <div class="answer">130 J</div>
+</div>
 </body>
 </html>
+
 
 
 
