@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #FF0000; /* Red color */
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -33,7 +33,7 @@ section {
 }
 
 h2 {
-    color: #333;
+    color: #FF0000; /* Red color */
 }
 
 p {
@@ -61,7 +61,7 @@ li {
 }
 
 .styled-table th {
-    background-color: #333;
+    background-color: #FF0000; /* Red color */
     color: #fff;
 }
 
@@ -79,7 +79,7 @@ li {
 }
 
 footer {
-    background-color: #333;
+    background-color: #FF0000; /* Red color */
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -91,6 +91,11 @@ footer {
         display: block;
         margin: 10px 0;
     }
+
+    .contact-form form {
+        grid-template-columns: 1fr;
+    }
+}
 
     .contact-form form {
         grid-template-columns: 1fr;
