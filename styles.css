@@ -41,14 +41,49 @@ main {
 }
 
 .slideshow {
-    /* Add slideshow styles here */
+    height: 300px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .newsletter {
+    text-align: center;
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newsletter label,
+.newsletter input,
+.newsletter button {
+    margin: 5px;
+}
+
+.newsletter input[type='email'] {
+    padding: 10px;
+    flex: 1;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #555;
 }
 
 .about {
@@ -67,6 +102,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
 
 
     .contact-form form {
