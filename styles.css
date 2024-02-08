@@ -1,101 +1,73 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset default browser styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #FF0000; /* Red color */
+    background-color: #333;
     color: #fff;
-    padding: 10px;
-    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
-nav li {
+nav ul li {
     display: inline;
     margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
 main {
     padding: 20px;
 }
 
-section {
-    margin-bottom: 30px;
+.slideshow {
+    /* Add slideshow styles here */
 }
 
-h2 {
-    color: #FF0000; /* Red color */
+.newsletter {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-p {
-    line-height: 1.6;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-.styled-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.styled-table th, .styled-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.styled-table th {
-    background-color: #FF0000; /* Red color */
-    color: #fff;
-}
-
-.contact-form form {
-    display: grid;
-    gap: 10px;
-}
-
-.contact-form label {
-    font-weight: bold;
-}
-
-.contact-form textarea {
-    resize: vertical;
+.about {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 footer {
-    background-color: #FF0000; /* Red color */
+    background-color: #333;
     color: #fff;
-    padding: 10px;
     text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 600px) {
-    nav li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .contact-form form {
-        grid-template-columns: 1fr;
-    }
-}
 
     .contact-form form {
         grid-template-columns: 1fr;
